@@ -1,0 +1,1311 @@
+1.How to compare two JSON have the same properties without order?
+ var obj1 = { name: "Person 1", age:5 };
+ var obj2 = { age:5, name: "Person 1" };
+
+Answer:
+//using lodash we can compare two objects without order
+
+var obj1 = { name: "Person 1", age:5 };
+var obj2 = { age:5, name: "Person 1" };
+console.log(_.isEqual(obj1,obj2)); 
+
+Output:
+
+task4.js:3  true
+
+2.Use the rest countries API url and display all the country flags in console
+
+Answer:
+
+var xhr=new XMLHttpRequest();
+xhr.open('GET',"https://restcountries.com/v3.1/all");
+xhr.onload=function(){
+    if(xhr.status>=200 && xhr.status<299)
+    {
+        let data=JSON.parse(this.response);
+        for (let i = 0; i < data.length; i++) {
+            console.log(data[i].flags);
+        }
+    }
+}
+xhr.send();
+
+Output:
+
+task4b.js:8 {png: 'https://flagcdn.com/w320/ng.png', svg: 'https://flagcdn.com/ng.svg'}png: "https://flagcdn.com/w320/ng.png"svg: "https://flagcdn.com/ng.svg"[[Prototype]]: Object
+task4b.js:8 {png: 'https://flagcdn.com/w320/dk.png', svg: 'https://flagcdn.com/dk.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/bv.png', svg: 'https://flagcdn.com/bv.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/ro.png', svg: 'https://flagcdn.com/ro.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/nr.png', svg: 'https://flagcdn.com/nr.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/gn.png', svg: 'https://flagcdn.com/gn.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/gm.png', svg: 'https://flagcdn.com/gm.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/tc.png', svg: 'https://flagcdn.com/tc.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/rs.png', svg: 'https://flagcdn.com/rs.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/sx.png', svg: 'https://flagcdn.com/sx.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/vc.png', svg: 'https://flagcdn.com/vc.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/mv.png', svg: 'https://flagcdn.com/mv.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/uy.png', svg: 'https://flagcdn.com/uy.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/is.png', svg: 'https://flagcdn.com/is.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/ua.png', svg: 'https://flagcdn.com/ua.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/bt.png', svg: 'https://flagcdn.com/bt.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/mx.png', svg: 'https://flagcdn.com/mx.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/ve.png', svg: 'https://flagcdn.com/ve.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/cx.png', svg: 'https://flagcdn.com/cx.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/uz.png', svg: 'https://flagcdn.com/uz.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/tg.png', svg: 'https://flagcdn.com/tg.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/mw.png', svg: 'https://flagcdn.com/mw.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/tz.png', svg: 'https://flagcdn.com/tz.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/by.png', svg: 'https://flagcdn.com/by.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/aw.png', svg: 'https://flagcdn.com/aw.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/iq.png', svg: 'https://flagcdn.com/iq.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/tf.png', svg: 'https://flagcdn.com/tf.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/to.png', svg: 'https://flagcdn.com/to.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/hr.png', svg: 'https://flagcdn.com/hr.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/gs.png', svg: 'https://flagcdn.com/gs.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/ye.png', svg: 'https://flagcdn.com/ye.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/my.png', svg: 'https://flagcdn.com/my.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/bl.png', svg: 'https://flagcdn.com/bl.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/ck.png', svg: 'https://flagcdn.com/ck.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/je.png', svg: 'https://flagcdn.com/je.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/mn.png', svg: 'https://flagcdn.com/mn.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/mc.png', svg: 'https://flagcdn.com/mc.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/au.png', svg: 'https://flagcdn.com/au.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/ec.png', svg: 'https://flagcdn.com/ec.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/fi.png', svg: 'https://flagcdn.com/fi.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/mg.png', svg: 'https://flagcdn.com/mg.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/ie.png', svg: 'https://flagcdn.com/ie.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/se.png', svg: 'https://flagcdn.com/se.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/nz.png', svg: 'https://flagcdn.com/nz.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/wf.png', svg: 'https://flagcdn.com/wf.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/om.png', svg: 'https://flagcdn.com/om.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/ag.png', svg: 'https://flagcdn.com/ag.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/kn.png', svg: 'https://flagcdn.com/kn.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/nc.png', svg: 'https://flagcdn.com/nc.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/ws.png', svg: 'https://flagcdn.com/ws.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/ca.png', svg: 'https://flagcdn.com/ca.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/sg.png', svg: 'https://flagcdn.com/sg.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/gt.png', svg: 'https://flagcdn.com/gt.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/tr.png', svg: 'https://flagcdn.com/tr.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/np.png', svg: 'https://flagcdn.com/np.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/li.png', svg: 'https://flagcdn.com/li.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/ba.png', svg: 'https://flagcdn.com/ba.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/td.png', svg: 'https://flagcdn.com/td.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/bo.png', svg: 'https://flagcdn.com/bo.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/ht.png', svg: 'https://flagcdn.com/ht.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/fo.png', svg: 'https://flagcdn.com/fo.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/mu.png', svg: 'https://flagcdn.com/mu.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/vi.png', svg: 'https://flagcdn.com/vi.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/ms.png', svg: 'https://flagcdn.com/ms.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/gy.png', svg: 'https://flagcdn.com/gy.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/mp.png', svg: 'https://flagcdn.com/mp.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/lc.png', svg: 'https://flagcdn.com/lc.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/id.png', svg: 'https://flagcdn.com/id.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/at.png', svg: 'https://flagcdn.com/at.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/gp.png', svg: 'https://flagcdn.com/gp.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/er.png', svg: 'https://flagcdn.com/er.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/kp.png', svg: 'https://flagcdn.com/kp.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/sc.png', svg: 'https://flagcdn.com/sc.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/bd.png', svg: 'https://flagcdn.com/bd.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/bw.png', svg: 'https://flagcdn.com/bw.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/pm.png', svg: 'https://flagcdn.com/pm.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/pk.png', svg: 'https://flagcdn.com/pk.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/bb.png', svg: 'https://flagcdn.com/bb.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/mq.png', svg: 'https://flagcdn.com/mq.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/nu.png', svg: 'https://flagcdn.com/nu.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/pw.png', svg: 'https://flagcdn.com/pw.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/am.png', svg: 'https://flagcdn.com/am.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/mm.png', svg: 'https://flagcdn.com/mm.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/re.png', svg: 'https://flagcdn.com/re.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/nl.png', svg: 'https://flagcdn.com/nl.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/ax.png', svg: 'https://flagcdn.com/ax.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/cm.png', svg: 'https://flagcdn.com/cm.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/pt.png', svg: 'https://flagcdn.com/pt.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/py.png', svg: 'https://flagcdn.com/py.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/cw.png', svg: 'https://flagcdn.com/cw.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/hn.png', svg: 'https://flagcdn.com/hn.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/zw.png', svg: 'https://flagcdn.com/zw.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/mt.png', svg: 'https://flagcdn.com/mt.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/gg.png', svg: 'https://flagcdn.com/gg.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/jp.png', svg: 'https://flagcdn.com/jp.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/so.png', svg: 'https://flagcdn.com/so.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/gr.png', svg: 'https://flagcdn.com/gr.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/kh.png', svg: 'https://flagcdn.com/kh.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/dm.png', svg: 'https://flagcdn.com/dm.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/tk.png', svg: 'https://flagcdn.com/tk.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/gu.png', svg: 'https://flagcdn.com/gu.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/gh.png', svg: 'https://flagcdn.com/gh.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/qa.png', svg: 'https://flagcdn.com/qa.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/sv.png', svg: 'https://flagcdn.com/sv.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/bm.png', svg: 'https://flagcdn.com/bm.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/hk.png', svg: 'https://flagcdn.com/hk.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/pr.png', svg: 'https://flagcdn.com/pr.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/sb.png', svg: 'https://flagcdn.com/sb.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/vg.png', svg: 'https://flagcdn.com/vg.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/cg.png', svg: 'https://flagcdn.com/cg.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/no.png', svg: 'https://flagcdn.com/no.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/lv.png', svg: 'https://flagcdn.com/lv.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/pe.png', svg: 'https://flagcdn.com/pe.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/tm.png', svg: 'https://flagcdn.com/tm.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/lt.png', svg: 'https://flagcdn.com/lt.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/et.png', svg: 'https://flagcdn.com/et.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/md.png', svg: 'https://flagcdn.com/md.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/sm.png', svg: 'https://flagcdn.com/sm.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/tl.png', svg: 'https://flagcdn.com/tl.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/gf.png', svg: 'https://flagcdn.com/gf.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/ly.png', svg: 'https://flagcdn.com/ly.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/lb.png', svg: 'https://flagcdn.com/lb.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/kz.png', svg: 'https://flagcdn.com/kz.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/gi.png', svg: 'https://flagcdn.com/gi.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/xk.png', svg: 'https://flagcdn.com/xk.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/gb.png', svg: 'https://flagcdn.com/gb.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/tv.png', svg: 'https://flagcdn.com/tv.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/nf.png', svg: 'https://flagcdn.com/nf.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/kg.png', svg: 'https://flagcdn.com/kg.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/hu.png', svg: 'https://flagcdn.com/hu.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/fk.png', svg: 'https://flagcdn.com/fk.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/fr.png', svg: 'https://flagcdn.com/fr.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/lk.png', svg: 'https://flagcdn.com/lk.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/yt.png', svg: 'https://flagcdn.com/yt.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/eg.png', svg: 'https://flagcdn.com/eg.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/mk.png', svg: 'https://flagcdn.com/mk.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/th.png', svg: 'https://flagcdn.com/th.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/ls.png', svg: 'https://flagcdn.com/ls.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/sl.png', svg: 'https://flagcdn.com/sl.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/lr.png', svg: 'https://flagcdn.com/lr.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/be.png', svg: 'https://flagcdn.com/be.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/fm.png', svg: 'https://flagcdn.com/fm.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/gq.png', svg: 'https://flagcdn.com/gq.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/im.png', svg: 'https://flagcdn.com/im.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/cr.png', svg: 'https://flagcdn.com/cr.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/de.png', svg: 'https://flagcdn.com/de.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/mr.png', svg: 'https://flagcdn.com/mr.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/ch.png', svg: 'https://flagcdn.com/ch.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/va.png', svg: 'https://flagcdn.com/va.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/um.png', svg: 'https://flagcdn.com/um.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/vn.png', svg: 'https://flagcdn.com/vn.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/ss.png', svg: 'https://flagcdn.com/ss.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/za.png', svg: 'https://flagcdn.com/za.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/cd.png', svg: 'https://flagcdn.com/cd.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/tt.png', svg: 'https://flagcdn.com/tt.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/ml.png', svg: 'https://flagcdn.com/ml.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/sj.png', svg: 'https://flagcdn.com/sj.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/dz.png', svg: 'https://flagcdn.com/dz.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/ps.png', svg: 'https://flagcdn.com/ps.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/sk.png', svg: 'https://flagcdn.com/sk.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/mz.png', svg: 'https://flagcdn.com/mz.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/ar.png', svg: 'https://flagcdn.com/ar.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/cz.png', svg: 'https://flagcdn.com/cz.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/fj.png', svg: 'https://flagcdn.com/fj.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/as.png', svg: 'https://flagcdn.com/as.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/gl.png', svg: 'https://flagcdn.com/gl.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/pl.png', svg: 'https://flagcdn.com/pl.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/io.png', svg: 'https://flagcdn.com/io.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/vu.png', svg: 'https://flagcdn.com/vu.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/sy.png', svg: 'https://flagcdn.com/sy.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/aq.png', svg: 'https://flagcdn.com/aq.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/sr.png', svg: 'https://flagcdn.com/sr.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/ao.png', svg: 'https://flagcdn.com/ao.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/bz.png', svg: 'https://flagcdn.com/bz.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/gd.png', svg: 'https://flagcdn.com/gd.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/me.png', svg: 'https://flagcdn.com/me.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/hm.png', svg: 'https://flagcdn.com/hm.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/il.png', svg: 'https://flagcdn.com/il.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/gw.png', svg: 'https://flagcdn.com/gw.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/ni.png', svg: 'https://flagcdn.com/ni.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/mo.png', svg: 'https://flagcdn.com/mo.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/ph.png', svg: 'https://flagcdn.com/ph.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/ci.png', svg: 'https://flagcdn.com/ci.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/tw.png', svg: 'https://flagcdn.com/tw.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/rw.png', svg: 'https://flagcdn.com/rw.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/mf.png', svg: 'https://flagcdn.com/mf.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/sa.png', svg: 'https://flagcdn.com/sa.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/bf.png', svg: 'https://flagcdn.com/bf.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/ne.png', svg: 'https://flagcdn.com/ne.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/pa.png', svg: 'https://flagcdn.com/pa.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/bq.png', svg: 'https://flagcdn.com/bq.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/cc.png', svg: 'https://flagcdn.com/cc.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/kr.png', svg: 'https://flagcdn.com/kr.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/it.png', svg: 'https://flagcdn.com/it.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/cf.png', svg: 'https://flagcdn.com/cf.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/sh.png', svg: 'https://flagcdn.com/sh.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/ge.png', svg: 'https://flagcdn.com/ge.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/co.png', svg: 'https://flagcdn.com/co.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/km.png', svg: 'https://flagcdn.com/km.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/tj.png', svg: 'https://flagcdn.com/tj.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/ky.png', svg: 'https://flagcdn.com/ky.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/lu.png', svg: 'https://flagcdn.com/lu.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/ki.png', svg: 'https://flagcdn.com/ki.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/ad.png', svg: 'https://flagcdn.com/ad.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/pn.png', svg: 'https://flagcdn.com/pn.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/ru.png', svg: 'https://flagcdn.com/ru.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/jm.png', svg: 'https://flagcdn.com/jm.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/cu.png', svg: 'https://flagcdn.com/cu.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/sn.png', svg: 'https://flagcdn.com/sn.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/bs.png', svg: 'https://flagcdn.com/bs.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/dj.png', svg: 'https://flagcdn.com/dj.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/br.png', svg: 'https://flagcdn.com/br.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/sd.png', svg: 'https://flagcdn.com/sd.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/tn.png', svg: 'https://flagcdn.com/tn.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/cy.png', svg: 'https://flagcdn.com/cy.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/ma.png', svg: 'https://flagcdn.com/ma.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/ai.png', svg: 'https://flagcdn.com/ai.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/ae.png', svg: 'https://flagcdn.com/ae.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/eh.png', svg: 'https://flagcdn.com/eh.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/na.png', svg: 'https://flagcdn.com/na.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/bg.png', svg: 'https://flagcdn.com/bg.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/ke.png', svg: 'https://flagcdn.com/ke.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/sz.png', svg: 'https://flagcdn.com/sz.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/ir.png', svg: 'https://flagcdn.com/ir.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/la.png', svg: 'https://flagcdn.com/la.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/do.png', svg: 'https://flagcdn.com/do.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/st.png', svg: 'https://flagcdn.com/st.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/ee.png', svg: 'https://flagcdn.com/ee.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/us.png', svg: 'https://flagcdn.com/us.svg'}
+task4b.js:8 {png: 'https://upload.wikimedia.org/wikipedia/commons/thu…the_Taliban.svg/320px-Flag_of_the_Taliban.svg.png', svg: 'https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_the_Taliban.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/ga.png', svg: 'https://flagcdn.com/ga.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/pf.png', svg: 'https://flagcdn.com/pf.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/kw.png', svg: 'https://flagcdn.com/kw.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/pg.png', svg: 'https://flagcdn.com/pg.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/cl.png', svg: 'https://flagcdn.com/cl.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/in.png', svg: 'https://flagcdn.com/in.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/jo.png', svg: 'https://flagcdn.com/jo.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/ug.png', svg: 'https://flagcdn.com/ug.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/al.png', svg: 'https://flagcdn.com/al.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/cn.png', svg: 'https://flagcdn.com/cn.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/bi.png', svg: 'https://flagcdn.com/bi.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/az.png', svg: 'https://flagcdn.com/az.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/bh.png', svg: 'https://flagcdn.com/bh.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/si.png', svg: 'https://flagcdn.com/si.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/zm.png', svg: 'https://flagcdn.com/zm.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/es.png', svg: 'https://flagcdn.com/es.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/bj.png', svg: 'https://flagcdn.com/bj.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/cv.png', svg: 'https://flagcdn.com/cv.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/bn.png', svg: 'https://flagcdn.com/bn.svg'}
+task4b.js:8 {png: 'https://flagcdn.com/w320/mh.png', svg: 'https://flagcdn.com/mh.svg'}
+
+3.Use the same rest countries and print all countries name, region, sub region and population
+
+Answer:
+var xhr=new XMLHttpRequest();
+xhr.open('GET',"https://restcountries.com/v3.1/all");
+xhr.onload=function(){
+     if(xhr.status>=200 && xhr.status<299)
+  {
+     let data=JSON.parse(this.response);
+     for (let i = 0; i < data.length; i++)
+     {
+     console.log(`counrty name:${data[i].name.common},
+      region:${data[i].region},
+      subregion:${data[i].subregion},
+       population:${data[i].population}`);
+     }
+  }
+}
+xhr.send();
+
+Output:
+task4c.js:9 counrty name:Nigeria,
+      region:Africa,
+      subregion:Western Africa,
+       population:206139587
+task4c.js:9 counrty name:Denmark,
+      region:Europe,
+      subregion:Northern Europe,
+       population:5831404
+task4c.js:9 counrty name:Bouvet Island,
+      region:Antarctic,
+      subregion:undefined,
+       population:0
+task4c.js:9 counrty name:Romania,
+      region:Europe,
+      subregion:Southeast Europe,
+       population:19286123
+task4c.js:9 counrty name:Nauru,
+      region:Oceania,
+      subregion:Micronesia,
+       population:10834
+task4c.js:9 counrty name:Guinea,
+      region:Africa,
+      subregion:Western Africa,
+       population:13132792
+task4c.js:9 counrty name:Gambia,
+      region:Africa,
+      subregion:Western Africa,
+       population:2416664
+task4c.js:9 counrty name:Turks and Caicos Islands,
+      region:Americas,
+      subregion:Caribbean,
+       population:38718
+task4c.js:9 counrty name:Serbia,
+      region:Europe,
+      subregion:Southeast Europe,
+       population:6908224
+task4c.js:9 counrty name:Sint Maarten,
+      region:Americas,
+      subregion:Caribbean,
+       population:40812
+task4c.js:9 counrty name:Saint Vincent and the Grenadines,
+      region:Americas,
+      subregion:Caribbean,
+       population:110947
+task4c.js:9 counrty name:Maldives,
+      region:Asia,
+      subregion:Southern Asia,
+       population:540542
+task4c.js:9 counrty name:Uruguay,
+      region:Americas,
+      subregion:South America,
+       population:3473727
+task4c.js:9 counrty name:Iceland,
+      region:Europe,
+      subregion:Northern Europe,
+       population:366425
+task4c.js:9 counrty name:Ukraine,
+      region:Europe,
+      subregion:Eastern Europe,
+       population:44134693
+task4c.js:9 counrty name:Bhutan,
+      region:Asia,
+      subregion:Southern Asia,
+       population:771612
+task4c.js:9 counrty name:Mexico,
+      region:Americas,
+      subregion:North America,
+       population:128932753
+task4c.js:9 counrty name:Venezuela,
+      region:Americas,
+      subregion:South America,
+       population:28435943
+task4c.js:9 counrty name:Christmas Island,
+      region:Oceania,
+      subregion:Australia and New Zealand,
+       population:2072
+task4c.js:9 counrty name:Uzbekistan,
+      region:Asia,
+      subregion:Central Asia,
+       population:34232050
+task4c.js:9 counrty name:Togo,
+      region:Africa,
+      subregion:Western Africa,
+       population:8278737
+task4c.js:9 counrty name:Malawi,
+      region:Africa,
+      subregion:Eastern Africa,
+       population:19129955
+task4c.js:9 counrty name:Tanzania,
+      region:Africa,
+      subregion:Eastern Africa,
+       population:59734213
+task4c.js:9 counrty name:Belarus,
+      region:Europe,
+      subregion:Eastern Europe,
+       population:9398861
+task4c.js:9 counrty name:Aruba,
+      region:Americas,
+      subregion:Caribbean,
+       population:106766
+task4c.js:9 counrty name:Iraq,
+      region:Asia,
+      subregion:Western Asia,
+       population:40222503
+task4c.js:9 counrty name:French Southern and Antarctic Lands,
+      region:Antarctic,
+      subregion:undefined,
+       population:400
+task4c.js:9 counrty name:Tonga,
+      region:Oceania,
+      subregion:Polynesia,
+       population:105697
+task4c.js:9 counrty name:Croatia,
+      region:Europe,
+      subregion:Southeast Europe,
+       population:4047200
+task4c.js:9 counrty name:South Georgia,
+      region:Antarctic,
+      subregion:undefined,
+       population:30
+task4c.js:9 counrty name:Yemen,
+      region:Asia,
+      subregion:Western Asia,
+       population:29825968
+task4c.js:9 counrty name:Malaysia,
+      region:Asia,
+      subregion:South-Eastern Asia,
+       population:32365998
+task4c.js:9 counrty name:Saint Barthélemy,
+      region:Americas,
+      subregion:Caribbean,
+       population:4255
+task4c.js:9 counrty name:Cook Islands,
+      region:Oceania,
+      subregion:Polynesia,
+       population:18100
+task4c.js:9 counrty name:Jersey,
+      region:Europe,
+      subregion:Northern Europe,
+       population:100800
+task4c.js:9 counrty name:Mongolia,
+      region:Asia,
+      subregion:Eastern Asia,
+       population:3278292
+task4c.js:9 counrty name:Monaco,
+      region:Europe,
+      subregion:Western Europe,
+       population:39244
+task4c.js:9 counrty name:Australia,
+      region:Oceania,
+      subregion:Australia and New Zealand,
+       population:25687041
+task4c.js:9 counrty name:Ecuador,
+      region:Americas,
+      subregion:South America,
+       population:17643060
+task4c.js:9 counrty name:Finland,
+      region:Europe,
+      subregion:Northern Europe,
+       population:5530719
+task4c.js:9 counrty name:Madagascar,
+      region:Africa,
+      subregion:Eastern Africa,
+       population:27691019
+task4c.js:9 counrty name:Ireland,
+      region:Europe,
+      subregion:Northern Europe,
+       population:4994724
+task4c.js:9 counrty name:Sweden,
+      region:Europe,
+      subregion:Northern Europe,
+       population:10353442
+task4c.js:9 counrty name:New Zealand,
+      region:Oceania,
+      subregion:Australia and New Zealand,
+       population:5084300
+task4c.js:9 counrty name:Wallis and Futuna,
+      region:Oceania,
+      subregion:Polynesia,
+       population:11750
+task4c.js:9 counrty name:Oman,
+      region:Asia,
+      subregion:Western Asia,
+       population:5106622
+task4c.js:9 counrty name:Antigua and Barbuda,
+      region:Americas,
+      subregion:Caribbean,
+       population:97928
+task4c.js:9 counrty name:Saint Kitts and Nevis,
+      region:Americas,
+      subregion:Caribbean,
+       population:53192
+task4c.js:9 counrty name:New Caledonia,
+      region:Oceania,
+      subregion:Melanesia,
+       population:271960
+task4c.js:9 counrty name:Samoa,
+      region:Oceania,
+      subregion:Polynesia,
+       population:198410
+task4c.js:9 counrty name:Canada,
+      region:Americas,
+      subregion:North America,
+       population:38005238
+task4c.js:9 counrty name:Singapore,
+      region:Asia,
+      subregion:South-Eastern Asia,
+       population:5685807
+task4c.js:9 counrty name:Guatemala,
+      region:Americas,
+      subregion:Central America,
+       population:16858333
+task4c.js:9 counrty name:Turkey,
+      region:Asia,
+      subregion:Western Asia,
+       population:84339067
+task4c.js:9 counrty name:Nepal,
+      region:Asia,
+      subregion:Southern Asia,
+       population:29136808
+task4c.js:9 counrty name:Liechtenstein,
+      region:Europe,
+      subregion:Western Europe,
+       population:38137
+task4c.js:9 counrty name:Bosnia and Herzegovina,
+      region:Europe,
+      subregion:Southeast Europe,
+       population:3280815
+task4c.js:9 counrty name:Chad,
+      region:Africa,
+      subregion:Middle Africa,
+       population:16425859
+task4c.js:9 counrty name:Bolivia,
+      region:Americas,
+      subregion:South America,
+       population:11673029
+task4c.js:9 counrty name:Haiti,
+      region:Americas,
+      subregion:Caribbean,
+       population:11402533
+task4c.js:9 counrty name:Faroe Islands,
+      region:Europe,
+      subregion:Northern Europe,
+       population:48865
+task4c.js:9 counrty name:Mauritius,
+      region:Africa,
+      subregion:Eastern Africa,
+       population:1265740
+task4c.js:9 counrty name:United States Virgin Islands,
+      region:Americas,
+      subregion:Caribbean,
+       population:106290
+task4c.js:9 counrty name:Montserrat,
+      region:Americas,
+      subregion:Caribbean,
+       population:4922
+task4c.js:9 counrty name:Guyana,
+      region:Americas,
+      subregion:South America,
+       population:786559
+task4c.js:9 counrty name:Northern Mariana Islands,
+      region:Oceania,
+      subregion:Micronesia,
+       population:57557
+task4c.js:9 counrty name:Saint Lucia,
+      region:Americas,
+      subregion:Caribbean,
+       population:183629
+task4c.js:9 counrty name:Indonesia,
+      region:Asia,
+      subregion:South-Eastern Asia,
+       population:273523621
+task4c.js:9 counrty name:Austria,
+      region:Europe,
+      subregion:Central Europe,
+       population:8917205
+task4c.js:9 counrty name:Guadeloupe,
+      region:Americas,
+      subregion:Caribbean,
+       population:400132
+task4c.js:9 counrty name:Eritrea,
+      region:Africa,
+      subregion:Eastern Africa,
+       population:5352000
+task4c.js:9 counrty name:North Korea,
+      region:Asia,
+      subregion:Eastern Asia,
+       population:25778815
+task4c.js:9 counrty name:Seychelles,
+      region:Africa,
+      subregion:Eastern Africa,
+       population:98462
+task4c.js:9 counrty name:Bangladesh,
+      region:Asia,
+      subregion:Southern Asia,
+       population:164689383
+task4c.js:9 counrty name:Botswana,
+      region:Africa,
+      subregion:Southern Africa,
+       population:2351625
+task4c.js:9 counrty name:Saint Pierre and Miquelon,
+      region:Americas,
+      subregion:North America,
+       population:6069
+task4c.js:9 counrty name:Pakistan,
+      region:Asia,
+      subregion:Southern Asia,
+       population:220892331
+task4c.js:9 counrty name:Barbados,
+      region:Americas,
+      subregion:Caribbean,
+       population:287371
+task4c.js:9 counrty name:Martinique,
+      region:Americas,
+      subregion:Caribbean,
+       population:378243
+task4c.js:9 counrty name:Niue,
+      region:Oceania,
+      subregion:Polynesia,
+       population:1470
+task4c.js:9 counrty name:Palau,
+      region:Oceania,
+      subregion:Micronesia,
+       population:18092
+task4c.js:9 counrty name:Armenia,
+      region:Asia,
+      subregion:Western Asia,
+       population:2963234
+task4c.js:9 counrty name:Myanmar,
+      region:Asia,
+      subregion:South-Eastern Asia,
+       population:54409794
+task4c.js:9 counrty name:Réunion,
+      region:Africa,
+      subregion:Eastern Africa,
+       population:840974
+task4c.js:9 counrty name:Netherlands,
+      region:Europe,
+      subregion:Western Europe,
+       population:16655799
+task4c.js:9 counrty name:Åland Islands,
+      region:Europe,
+      subregion:Northern Europe,
+       population:29458
+task4c.js:9 counrty name:Cameroon,
+      region:Africa,
+      subregion:Middle Africa,
+       population:26545864
+task4c.js:9 counrty name:Portugal,
+      region:Europe,
+      subregion:Southern Europe,
+       population:10305564
+task4c.js:9 counrty name:Paraguay,
+      region:Americas,
+      subregion:South America,
+       population:7132530
+task4c.js:9 counrty name:Curaçao,
+      region:Americas,
+      subregion:Caribbean,
+       population:155014
+task4c.js:9 counrty name:Honduras,
+      region:Americas,
+      subregion:Central America,
+       population:9904608
+task4c.js:9 counrty name:Zimbabwe,
+      region:Africa,
+      subregion:Eastern Africa,
+       population:14862927
+task4c.js:9 counrty name:Malta,
+      region:Europe,
+      subregion:Southern Europe,
+       population:525285
+task4c.js:9 counrty name:Guernsey,
+      region:Europe,
+      subregion:Northern Europe,
+       population:62999
+task4c.js:9 counrty name:Japan,
+      region:Asia,
+      subregion:Eastern Asia,
+       population:125836021
+task4c.js:9 counrty name:Somalia,
+      region:Africa,
+      subregion:Eastern Africa,
+       population:15893219
+task4c.js:9 counrty name:Greece,
+      region:Europe,
+      subregion:Southern Europe,
+       population:10715549
+task4c.js:9 counrty name:Cambodia,
+      region:Asia,
+      subregion:South-Eastern Asia,
+       population:16718971
+task4c.js:9 counrty name:Dominica,
+      region:Americas,
+      subregion:Caribbean,
+       population:71991
+task4c.js:9 counrty name:Tokelau,
+      region:Oceania,
+      subregion:Polynesia,
+       population:1411
+task4c.js:9 counrty name:Guam,
+      region:Oceania,
+      subregion:Micronesia,
+       population:168783
+task4c.js:9 counrty name:Ghana,
+      region:Africa,
+      subregion:Western Africa,
+       population:31072945
+task4c.js:9 counrty name:Qatar,
+      region:Asia,
+      subregion:Western Asia,
+       population:2881060
+task4c.js:9 counrty name:El Salvador,
+      region:Americas,
+      subregion:Central America,
+       population:6486201
+task4c.js:9 counrty name:Bermuda,
+      region:Americas,
+      subregion:North America,
+       population:63903
+task4c.js:9 counrty name:Hong Kong,
+      region:Asia,
+      subregion:Eastern Asia,
+       population:7500700
+task4c.js:9 counrty name:Puerto Rico,
+      region:Americas,
+      subregion:Caribbean,
+       population:3194034
+task4c.js:9 counrty name:Solomon Islands,
+      region:Oceania,
+      subregion:Melanesia,
+       population:686878
+task4c.js:9 counrty name:British Virgin Islands,
+      region:Americas,
+      subregion:Caribbean,
+       population:30237
+task4c.js:9 counrty name:Republic of the Congo,
+      region:Africa,
+      subregion:Middle Africa,
+       population:89561404
+task4c.js:9 counrty name:Norway,
+      region:Europe,
+      subregion:Northern Europe,
+       population:5379475
+task4c.js:9 counrty name:Latvia,
+      region:Europe,
+      subregion:Northern Europe,
+       population:1901548
+task4c.js:9 counrty name:Peru,
+      region:Americas,
+      subregion:South America,
+       population:32971846
+task4c.js:9 counrty name:Turkmenistan,
+      region:Asia,
+      subregion:Central Asia,
+       population:6031187
+task4c.js:9 counrty name:Lithuania,
+      region:Europe,
+      subregion:Northern Europe,
+       population:2794700
+task4c.js:9 counrty name:Ethiopia,
+      region:Africa,
+      subregion:Eastern Africa,
+       population:114963583
+task4c.js:9 counrty name:Moldova,
+      region:Europe,
+      subregion:Eastern Europe,
+       population:2617820
+task4c.js:9 counrty name:San Marino,
+      region:Europe,
+      subregion:Southern Europe,
+       population:33938
+task4c.js:9 counrty name:Timor-Leste,
+      region:Asia,
+      subregion:South-Eastern Asia,
+       population:1318442
+task4c.js:9 counrty name:French Guiana,
+      region:Americas,
+      subregion:South America,
+       population:254541
+task4c.js:9 counrty name:Libya,
+      region:Africa,
+      subregion:Northern Africa,
+       population:6871287
+task4c.js:9 counrty name:Lebanon,
+      region:Asia,
+      subregion:Western Asia,
+       population:6825442
+task4c.js:9 counrty name:Kazakhstan,
+      region:Asia,
+      subregion:Central Asia,
+       population:18754440
+task4c.js:9 counrty name:Gibraltar,
+      region:Europe,
+      subregion:Southern Europe,
+       population:33691
+task4c.js:9 counrty name:Kosovo,
+      region:Europe,
+      subregion:Southeast Europe,
+       population:1775378
+task4c.js:9 counrty name:United Kingdom,
+      region:Europe,
+      subregion:Northern Europe,
+       population:67215293
+task4c.js:9 counrty name:Tuvalu,
+      region:Oceania,
+      subregion:Polynesia,
+       population:11792
+task4c.js:9 counrty name:Norfolk Island,
+      region:Oceania,
+      subregion:Australia and New Zealand,
+       population:2302
+task4c.js:9 counrty name:Kyrgyzstan,
+      region:Asia,
+      subregion:Central Asia,
+       population:6591600
+task4c.js:9 counrty name:Hungary,
+      region:Europe,
+      subregion:Central Europe,
+       population:9749763
+task4c.js:9 counrty name:Falkland Islands,
+      region:Americas,
+      subregion:South America,
+       population:2563
+task4c.js:9 counrty name:France,
+      region:Europe,
+      subregion:Western Europe,
+       population:67391582
+task4c.js:9 counrty name:Sri Lanka,
+      region:Asia,
+      subregion:Southern Asia,
+       population:21919000
+task4c.js:9 counrty name:Mayotte,
+      region:Africa,
+      subregion:Eastern Africa,
+       population:226915
+task4c.js:9 counrty name:Egypt,
+      region:Africa,
+      subregion:Northern Africa,
+       population:102334403
+task4c.js:9 counrty name:North Macedonia,
+      region:Europe,
+      subregion:Southeast Europe,
+       population:2077132
+task4c.js:9 counrty name:Thailand,
+      region:Asia,
+      subregion:South-Eastern Asia,
+       population:69799978
+task4c.js:9 counrty name:Lesotho,
+      region:Africa,
+      subregion:Southern Africa,
+       population:2142252
+task4c.js:9 counrty name:Sierra Leone,
+      region:Africa,
+      subregion:Western Africa,
+       population:7976985
+task4c.js:9 counrty name:Liberia,
+      region:Africa,
+      subregion:Western Africa,
+       population:5057677
+task4c.js:9 counrty name:Belgium,
+      region:Europe,
+      subregion:Western Europe,
+       population:11555997
+task4c.js:9 counrty name:Micronesia,
+      region:Oceania,
+      subregion:Micronesia,
+       population:115021
+task4c.js:9 counrty name:Equatorial Guinea,
+      region:Africa,
+      subregion:Middle Africa,
+       population:1402985
+task4c.js:9 counrty name:Isle of Man,
+      region:Europe,
+      subregion:Northern Europe,
+       population:85032
+task4c.js:9 counrty name:Costa Rica,
+      region:Americas,
+      subregion:Central America,
+       population:5094114
+task4c.js:9 counrty name:Germany,
+      region:Europe,
+      subregion:Western Europe,
+       population:83240525
+task4c.js:9 counrty name:Mauritania,
+      region:Africa,
+      subregion:Western Africa,
+       population:4649660
+task4c.js:9 counrty name:Switzerland,
+      region:Europe,
+      subregion:Western Europe,
+       population:8654622
+task4c.js:9 counrty name:Vatican City,
+      region:Europe,
+      subregion:Southern Europe,
+       population:451
+task4c.js:9 counrty name:United States Minor Outlying Islands,
+      region:Americas,
+      subregion:North America,
+       population:300
+task4c.js:9 counrty name:Vietnam,
+      region:Asia,
+      subregion:South-Eastern Asia,
+       population:97338583
+task4c.js:9 counrty name:South Sudan,
+      region:Africa,
+      subregion:Middle Africa,
+       population:11193729
+task4c.js:9 counrty name:South Africa,
+      region:Africa,
+      subregion:Southern Africa,
+       population:59308690
+task4c.js:9 counrty name:DR Congo,
+      region:Africa,
+      subregion:Middle Africa,
+       population:89561404
+task4c.js:9 counrty name:Trinidad and Tobago,
+      region:Americas,
+      subregion:Caribbean,
+       population:1399491
+task4c.js:9 counrty name:Mali,
+      region:Africa,
+      subregion:Western Africa,
+       population:20250834
+task4c.js:9 counrty name:Svalbard and Jan Mayen,
+      region:Europe,
+      subregion:Northern Europe,
+       population:2562
+task4c.js:9 counrty name:Algeria,
+      region:Africa,
+      subregion:Northern Africa,
+       population:510713
+task4c.js:9 counrty name:Palestine,
+      region:Asia,
+      subregion:Western Asia,
+       population:4803269
+task4c.js:9 counrty name:Slovakia,
+      region:Europe,
+      subregion:Central Europe,
+       population:5458827
+task4c.js:9 counrty name:Mozambique,
+      region:Africa,
+      subregion:Eastern Africa,
+       population:31255435
+task4c.js:9 counrty name:Argentina,
+      region:Americas,
+      subregion:South America,
+       population:45376763
+task4c.js:9 counrty name:Czechia,
+      region:Europe,
+      subregion:Central Europe,
+       population:10698896
+task4c.js:9 counrty name:Fiji,
+      region:Oceania,
+      subregion:Melanesia,
+       population:896444
+task4c.js:9 counrty name:American Samoa,
+      region:Oceania,
+      subregion:Polynesia,
+       population:55197
+task4c.js:9 counrty name:Greenland,
+      region:Americas,
+      subregion:North America,
+       population:56367
+task4c.js:9 counrty name:Poland,
+      region:Europe,
+      subregion:Central Europe,
+       population:37950802
+task4c.js:9 counrty name:British Indian Ocean Territory,
+      region:Africa,
+      subregion:Eastern Africa,
+       population:3000
+task4c.js:9 counrty name:Vanuatu,
+      region:Oceania,
+      subregion:Melanesia,
+       population:307150
+task4c.js:9 counrty name:Syria,
+      region:Asia,
+      subregion:Western Asia,
+       population:17500657
+task4c.js:9 counrty name:Antarctica,
+      region:Antarctic,
+      subregion:undefined,
+       population:1000
+task4c.js:9 counrty name:Suriname,
+      region:Americas,
+      subregion:South America,
+       population:586634
+task4c.js:9 counrty name:Angola,
+      region:Africa,
+      subregion:Middle Africa,
+       population:32866268
+task4c.js:9 counrty name:Belize,
+      region:Americas,
+      subregion:Central America,
+       population:397621
+task4c.js:9 counrty name:Grenada,
+      region:Americas,
+      subregion:Caribbean,
+       population:112519
+task4c.js:9 counrty name:Montenegro,
+      region:Europe,
+      subregion:Southeast Europe,
+       population:621718
+task4c.js:9 counrty name:Heard Island and McDonald Islands,
+      region:Antarctic,
+      subregion:undefined,
+       population:0
+task4c.js:9 counrty name:Israel,
+      region:Asia,
+      subregion:Western Asia,
+       population:9216900
+task4c.js:9 counrty name:Guinea-Bissau,
+      region:Africa,
+      subregion:Western Africa,
+       population:1967998
+task4c.js:9 counrty name:Nicaragua,
+      region:Americas,
+      subregion:Central America,
+       population:6624554
+task4c.js:9 counrty name:Macau,
+      region:Asia,
+      subregion:Eastern Asia,
+       population:649342
+task4c.js:9 counrty name:Philippines,
+      region:Asia,
+      subregion:South-Eastern Asia,
+       population:109581085
+task4c.js:9 counrty name:Ivory Coast,
+      region:Africa,
+      subregion:Western Africa,
+       population:26378275
+task4c.js:9 counrty name:Taiwan,
+      region:Asia,
+      subregion:Eastern Asia,
+       population:23503349
+task4c.js:9 counrty name:Rwanda,
+      region:Africa,
+      subregion:Eastern Africa,
+       population:12952209
+task4c.js:9 counrty name:Saint Martin,
+      region:Americas,
+      subregion:Caribbean,
+       population:38659
+task4c.js:9 counrty name:Saudi Arabia,
+      region:Asia,
+      subregion:Western Asia,
+       population:34813867
+task4c.js:9 counrty name:Burkina Faso,
+      region:Africa,
+      subregion:Western Africa,
+       population:20903278
+task4c.js:9 counrty name:Niger,
+      region:Africa,
+      subregion:Western Africa,
+       population:24206636
+task4c.js:9 counrty name:Panama,
+      region:Americas,
+      subregion:Central America,
+       population:4314768
+task4c.js:9 counrty name:Caribbean Netherlands,
+      region:Americas,
+      subregion:Caribbean,
+       population:25987
+task4c.js:9 counrty name:Cocos (Keeling) Islands,
+      region:Oceania,
+      subregion:Australia and New Zealand,
+       population:544
+task4c.js:9 counrty name:South Korea,
+      region:Asia,
+      subregion:Eastern Asia,
+       population:51780579
+task4c.js:9 counrty name:Italy,
+      region:Europe,
+      subregion:Southern Europe,
+       population:59554023
+task4c.js:9 counrty name:Central African Republic,
+      region:Africa,
+      subregion:Middle Africa,
+       population:4829764
+task4c.js:9 counrty name:Saint Helena, Ascension and Tristan da Cunha,
+      region:Africa,
+      subregion:Western Africa,
+       population:53192
+task4c.js:9 counrty name:Georgia,
+      region:Asia,
+      subregion:Western Asia,
+       population:3714000
+task4c.js:9 counrty name:Colombia,
+      region:Americas,
+      subregion:South America,
+       population:50882884
+task4c.js:9 counrty name:Comoros,
+      region:Africa,
+      subregion:Eastern Africa,
+       population:869595
+task4c.js:9 counrty name:Tajikistan,
+      region:Asia,
+      subregion:Central Asia,
+       population:9537642
+task4c.js:9 counrty name:Cayman Islands,
+      region:Americas,
+      subregion:Caribbean,
+       population:65720
+task4c.js:9 counrty name:Luxembourg,
+      region:Europe,
+      subregion:Western Europe,
+       population:632275
+task4c.js:9 counrty name:Kiribati,
+      region:Oceania,
+      subregion:Micronesia,
+       population:119446
+task4c.js:9 counrty name:Andorra,
+      region:Europe,
+      subregion:Southern Europe,
+       population:77265
+task4c.js:9 counrty name:Pitcairn Islands,
+      region:Oceania,
+      subregion:Polynesia,
+       population:56
+task4c.js:9 counrty name:Russia,
+      region:Europe,
+      subregion:Eastern Europe,
+       population:144104080
+task4c.js:9 counrty name:Jamaica,
+      region:Americas,
+      subregion:Caribbean,
+       population:2961161
+task4c.js:9 counrty name:Cuba,
+      region:Americas,
+      subregion:Caribbean,
+       population:11326616
+task4c.js:9 counrty name:Senegal,
+      region:Africa,
+      subregion:Western Africa,
+       population:16743930
+task4c.js:9 counrty name:Bahamas,
+      region:Americas,
+      subregion:Caribbean,
+       population:393248
+task4c.js:9 counrty name:Djibouti,
+      region:Africa,
+      subregion:Eastern Africa,
+       population:988002
+task4c.js:9 counrty name:Brazil,
+      region:Americas,
+      subregion:South America,
+       population:212559409
+task4c.js:9 counrty name:Sudan,
+      region:Africa,
+      subregion:Northern Africa,
+       population:43849269
+task4c.js:9 counrty name:Tunisia,
+      region:Africa,
+      subregion:Northern Africa,
+       population:11818618
+task4c.js:9 counrty name:Cyprus,
+      region:Europe,
+      subregion:Southern Europe,
+       population:1207361
+task4c.js:9 counrty name:Morocco,
+      region:Africa,
+      subregion:Northern Africa,
+       population:36910558
+task4c.js:9 counrty name:Anguilla,
+      region:Americas,
+      subregion:Caribbean,
+       population:13452
+task4c.js:9 counrty name:United Arab Emirates,
+      region:Asia,
+      subregion:Western Asia,
+       population:9890400
+task4c.js:9 counrty name:Western Sahara,
+      region:Africa,
+      subregion:Northern Africa,
+       population:510713
+task4c.js:9 counrty name:Namibia,
+      region:Africa,
+      subregion:Southern Africa,
+       population:2540916
+task4c.js:9 counrty name:Bulgaria,
+      region:Europe,
+      subregion:Southeast Europe,
+       population:6927288
+task4c.js:9 counrty name:Kenya,
+      region:Africa,
+      subregion:Eastern Africa,
+       population:53771300
+task4c.js:9 counrty name:Eswatini,
+      region:Africa,
+      subregion:Southern Africa,
+       population:1160164
+task4c.js:9 counrty name:Iran,
+      region:Asia,
+      subregion:Southern Asia,
+       population:83992953
+task4c.js:9 counrty name:Laos,
+      region:Asia,
+      subregion:South-Eastern Asia,
+       population:7275556
+task4c.js:9 counrty name:Dominican Republic,
+      region:Americas,
+      subregion:Caribbean,
+       population:10847904
+task4c.js:9 counrty name:São Tomé and Príncipe,
+      region:Africa,
+      subregion:Middle Africa,
+       population:219161
+task4c.js:9 counrty name:Estonia,
+      region:Europe,
+      subregion:Northern Europe,
+       population:1331057
+task4c.js:9 counrty name:United States,
+      region:Americas,
+      subregion:North America,
+       population:329484123
+task4c.js:9 counrty name:Afghanistan,
+      region:Asia,
+      subregion:Southern Asia,
+       population:40218234
+task4c.js:9 counrty name:Gabon,
+      region:Africa,
+      subregion:Middle Africa,
+       population:2225728
+task4c.js:9 counrty name:French Polynesia,
+      region:Oceania,
+      subregion:Polynesia,
+       population:280904
+task4c.js:9 counrty name:Kuwait,
+      region:Asia,
+      subregion:Western Asia,
+       population:4270563
+task4c.js:9 counrty name:Papua New Guinea,
+      region:Oceania,
+      subregion:Melanesia,
+       population:8947027
+task4c.js:9 counrty name:Chile,
+      region:Americas,
+      subregion:South America,
+       population:19116209
+task4c.js:9 counrty name:India,
+      region:Asia,
+      subregion:Southern Asia,
+       population:1380004385
+task4c.js:9 counrty name:Jordan,
+      region:Asia,
+      subregion:Western Asia,
+       population:10203140
+task4c.js:9 counrty name:Uganda,
+      region:Africa,
+      subregion:Eastern Africa,
+       population:45741000
+task4c.js:9 counrty name:Albania,
+      region:Europe,
+      subregion:Southeast Europe,
+       population:2837743
+task4c.js:9 counrty name:China,
+      region:Asia,
+      subregion:Eastern Asia,
+       population:1402112000
+task4c.js:9 counrty name:Burundi,
+      region:Africa,
+      subregion:Eastern Africa,
+       population:11890781
+task4c.js:9 counrty name:Azerbaijan,
+      region:Asia,
+      subregion:Western Asia,
+       population:10110116
+task4c.js:9 counrty name:Bahrain,
+      region:Asia,
+      subregion:Western Asia,
+       population:1701583
+task4c.js:9 counrty name:Slovenia,
+      region:Europe,
+      subregion:Central Europe,
+       population:2100126
+task4c.js:9 counrty name:Zambia,
+      region:Africa,
+      subregion:Eastern Africa,
+       population:18383956
+task4c.js:9 counrty name:Spain,
+      region:Europe,
+      subregion:Southern Europe,
+       population:47351567
+task4c.js:9 counrty name:Benin,
+      region:Africa,
+      subregion:Western Africa,
+       population:12123198
+task4c.js:9 counrty name:Cape Verde,
+      region:Africa,
+      subregion:Western Africa,
+       population:555988
+task4c.js:9 counrty name:Brunei,
+      region:Asia,
+      subregion:South-Eastern Asia,
+       population:437483
+task4c.js:9 counrty name:Marshall Islands,
+      region:Oceania,
+      subregion:Micronesia,
+       population:59194
+
+
+
+
+
