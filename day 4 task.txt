@@ -20,7 +20,7 @@ Answer:
 var xhr=new XMLHttpRequest();
 xhr.open('GET',"https://restcountries.com/v3.1/all");
 xhr.onload=function(){
-    if(xhr.status>=200 && xhr.status<299)
+    if(xhr.status>=200 && xhr.status<300)
     {
         let data=JSON.parse(this.response);
         for (let i = 0; i < data.length; i++) {
@@ -289,7 +289,7 @@ Answer:
 var xhr=new XMLHttpRequest();
 xhr.open('GET',"https://restcountries.com/v3.1/all");
 xhr.onload=function(){
-     if(xhr.status>=200 && xhr.status<299)
+     if(xhr.status>=200 && xhr.status<300)
   {
      let data=JSON.parse(this.response);
      for (let i = 0; i < data.length; i++)
